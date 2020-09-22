@@ -20,15 +20,15 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 
-* * * * * www-data php7.1 /var/www/dxmoto.com cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /var/www/dxmoto.mage2.pro/var/log/magento.cron.log
-* * * * * www-data php7.1 /var/www/dxmoto.com/update/cron.php >> /var/www/dxmoto.mage2.pro/var/log/update.cron.log
-* * * * * www-data php7.1 /var/www/dxmoto.com/bin/magento setup:cron:run >> /var/www/dxmoto.mage2.pro/var/log/setup.cron.log
+* * * * * www-data php7.2 /var/www/dxmoto.com cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /var/www/dxmoto.mage2.pro/var/log/magento.cron.log
+* * * * * www-data php7.2 /var/www/dxmoto.com/update/cron.php >> /var/www/dxmoto.mage2.pro/var/log/update.cron.log
+* * * * * www-data php7.2 /var/www/dxmoto.com/bin/magento setup:cron:run >> /var/www/dxmoto.mage2.pro/var/log/setup.cron.log
 0 0 * * 0 www-data mysql dxmoto -e "delete from m2epro_listing_log where create_date < date_sub(now(), interval 10 day)"
 0 0 * * 0 www-data mysql dxmoto -e "delete from m2epro_processing where create_date < date_sub(now(), interval 18 day)"
 */5 * * * * www-data mysql dxmoto -e "delete from cron_schedule where scheduled_at < date_sub(now(), interval 3 hour)"
 50 18 * * * www-data rm -f /var/www/dxmoto.com/pendiente/Tabla10.csv
-0 1 * * 0 www-data php7.1 /var/www/dxmoto.com/bin/magento bms_advancedstock:flush_stock_index
-0 4 * * 0 www-data php7.1 /var/www/dxmoto.com/bin/magento bms_advancedstock:check_stock_discrepencies
+0 1 * * 0 www-data php7.2 /var/www/dxmoto.com/bin/magento bms_advancedstock:flush_stock_index
+0 4 * * 0 www-data php7.2 /var/www/dxmoto.com/bin/magento bms_advancedstock:check_stock_discrepencies
 0 0 * * 0 www-data rm -rf /var/www/dxmoto.com/basura/*
 # 2017-04-29 Let's Encrypt certificates update: https://serverfault.com/a/790776
 @daily www-data sudo certbot renew && sudo service nginx restart
