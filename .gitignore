@@ -1,2 +1,4 @@
 # 2020-09-18 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 /_my
+# 2020-09-27 http://docs.pythonboto.org/en/latest/boto_config_tut.html#details
+/etc/boto.cfg
