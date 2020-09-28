@@ -2,3 +2,4 @@
 /_my
 # 2020-09-27 http://docs.pythonboto.org/en/latest/boto_config_tut.html#details
 /etc/boto.cfg
+/etc/mysql/credentials.cnf
