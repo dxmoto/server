@@ -4,8 +4,7 @@
 # 2020-09-30
 # The *.dup files contain Amazon Web Services credentials, so I exclude them from the source control.
 # Unfortunately, Backupninja does not allow to place these credentials to a dedicated file.
-/etc/backup.d/dxmoto.com--db--2.dup
-/etc/backup.d/dxmoto.com--files.dup
+/etc/backup.d/*.dup
 # 2020-09-27 http://docs.pythonboto.org/en/latest/boto_config_tut.html#details
 /etc/boto.cfg
 /etc/mysql/credentials.cnf
