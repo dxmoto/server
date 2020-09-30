@@ -1,0 +1,6 @@
+# 2020-09-30 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# 1) "Setup a backup solution using Backupninja and Duplicity": https://github.com/vegandthecity/server/issues/9
+# 2) It is used by Backupninja if a `/etc/backup.d/*.mysql` file does not contain MySQL credentials
+# (`dbpassword` and `dbusername` parameters):
+# https://0xacab.org/riseuplabs/backupninja/-/blob/backupninja_debian/1.1.0-1/examples/example.mysql#L26
+!include /etc/mysql/credentials.cnf
