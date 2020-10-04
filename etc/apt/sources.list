@@ -37,3 +37,6 @@ deb https://packages.sury.org/php/ buster main
 # 1) «Install Elasticsearch for Magento»: https://github.com/dxmoto/server/issues/2
 # 2) «How did I install Elasticsearch 7 for Magento 2.3 to Debian 10?»: https://df.tips/t/1037
 deb https://artifacts.elastic.co/packages/7.x/apt stable main
+
+# 2020-10-04 "Install Erlang for RabbitMQ": https://github.com/dxmoto/server/issues/8
+deb https://dl.bintray.com/rabbitmq-erlang/debian buster erlang
