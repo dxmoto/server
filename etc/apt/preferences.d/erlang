@@ -1,0 +1,8 @@
+# 2020-10-04 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# 1) "Install Erlang for RabbitMQ": https://github.com/dxmoto/server/issues/8
+# 2) "How did I install Erlang to Debian 10?": https://df.tips/t/1005
+# 3) https://www.rabbitmq.com/install-debian.html#apt-pinning
+# 4) https://github.com/rabbitmq/erlang-debian-package/tree/53ea1f78#packagerepository-pinning-apt-preferences
+Package: erlang*
+Pin: release o=Bintray
+Pin-Priority: 1000
