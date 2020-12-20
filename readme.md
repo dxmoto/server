@@ -8,4 +8,5 @@ service mysql restart
 service nginx restart
 service php7.2-fpm restart
 service postfix restart
+service rabbitmq-server restart
 ```
