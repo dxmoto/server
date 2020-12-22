@@ -26,10 +26,18 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 0 * * 0 www-data mysql dxmoto -e "delete from m2epro_listing_log where create_date < date_sub(now(), interval 10 day)"
 0 0 * * 0 www-data mysql dxmoto -e "delete from m2epro_processing where create_date < date_sub(now(), interval 18 day)"
 */5 * * * * www-data mysql dxmoto -e "delete from cron_schedule where scheduled_at < date_sub(now(), interval 3 hour)"
-50 18 * * * www-data rm -f /var/www/dxmoto.com/pendiente/Tabla10.csv
+50 19 * * * www-data rm -f /var/www/dxmoto.com/pendiente/Tabla10.csv
 0 1 * * 0 www-data php7.2 /var/www/dxmoto.com/bin/magento bms_advancedstock:flush_stock_index
-0 4 * * 0 www-data php7.2 /var/www/dxmoto.com/bin/magento bms_advancedstock:check_stock_discrepencies
+0 3 * * 0 www-data php7.2 /var/www/dxmoto.com/bin/magento bms_advancedstock:check_stock_discrepencies
 0 0 * * 0 www-data rm -rf /var/www/dxmoto.com/basura/*
+
+0 4 * * * www-data php7.2 /var/www/dxmoto.com/bin/magento indexer:reset cataloginventory_stock
+0 */12 * * * www-data php7.2 /var/www/dxmoto.com/bin/magento cache:flush
+0 7 * * * www-data php7.2 /var/www/dxmoto.com/bin/magento cache:enable
+# 00 21 * * * www-data php7.2 /var/www/dxmoto.com/bin/magento import:job:run 63
+0 5 * * 0 www-data php7.2 /var/www/dxmoto.com/bin/magento indexer:reindex
+
 # 2017-04-29 Let's Encrypt certificates update: https://serverfault.com/a/790776
-@daily www-data sudo certbot renew && sudo service nginx restart
+# 2020-12-20 «M2E Pro is unable to load 192.000 products from Magento»: https://github.com/dxmoto/server/issues/9
+@weekly www-data sudo certbot renew && sudo service nginx restart
 #
