@@ -1,4 +1,4 @@
-# 2020-09-29 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# 2020-09-29 Dmitry Fedyuk https://github.com/dmitrii-fediuk
 # 2020-09-30
 # We do not need credentials here: the authentication is done via `/etc/mysql/debian.cnf`:
 # https://0xacab.org/riseuplabs/backupninja/-/blob/backupninja_debian/1.1.0-1/examples/example.mysql#L26
